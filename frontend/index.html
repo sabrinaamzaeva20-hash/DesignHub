@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>DesignHub — Менеджер дизайн-проектов</title>
+<link rel="stylesheet" href="/style.css"><script src="/app.js" defer></script>
+</head>
+<body>
+<div class="layout">
+<aside class="sidebar">
+<div class="logo"><span class="logo-mark">✳</span> DesignHub<span class="logo-dot">.</span></div>
+<p class="side-label">РАБОЧЕЕ ПРОСТРАНСТВО</p>
+<div class="nav active">▦ <span>Обзор проектов</span></div>
+<div class="nav">◷ <span>Рабочий процесс</span></div>
+<div class="nav">⌁ <span>Калькулятор</span></div>
+<div class="side-bottom"><span class="avatar">D</span><div><b>Design Studio</b><small>Личное пространство</small></div></div>
+</aside>
+<main class="main">
+<header><span class="eyebrow">WORKSPACE / DASHBOARD</span><span class="header-date" id="today"></span></header>
+<div class="hero"><div><div class="eyebrow">ВАШ ТВОРЧЕСКИЙ ПРОЦЕСС ПОД КОНТРОЛЕМ</div><h1>Хорошие идеи.<br><em>Отличные проекты.</em></h1><p>Управляйте клиентами, задачами и стоимостью работы в одном месте.</p></div><div class="hero-decor">✳</div></div>
+<section class="heading"><div><span class="eyebrow">УПРАВЛЕНИЕ ПРОЕКТАМИ</span><h2>Мои проекты <span id="total-count" class="count">0</span></h2></div><button class="primary" id="show-form">＋ Новый проект</button></section>
+<div class="metrics"><div><span>Всего проектов</span><strong id="metric-total">—</strong><small>В рабочем пространстве</small></div><div><span>В работе</span><strong id="metric-active">—</strong><small>Активные задачи</small></div><div><span>На проверке</span><strong id="metric-review">—</strong><small>Ждут согласования</small></div><div><span>Завершено</span><strong id="metric-done">—</strong><small>Готовые проекты</small></div></div>
+<section class="panel"><div class="panel-head"><div><h3>Список проектов</h3><p>Все ваши текущие и завершённые работы</p></div><button class="secondary" id="refresh">↻ Обновить</button></div><div class="table-scroll"><table><thead><tr><th>ПРОЕКТ</th><th>КЛИЕНТ</th><th>КАТЕГОРИЯ</th><th>СТАТУС</th><th>ДЕЙСТВИЯ</th></tr></thead><tbody id="projects"><tr><td colspan="5">Загружаем проекты…</td></tr></tbody></table></div></section>
+<section class="calculator panel"><div><span class="eyebrow">ОТДЕЛЬНЫЙ WEB-СЕРВИС</span><h3>Калькулятор стоимости</h3><p>Рассчитайте бюджет заказа за пару секунд.</p></div><form id="estimate-form" class="estimate-form"><label>Тип работы<select id="estimate-category"><option>Соцсети</option><option>Брендинг</option><option>Веб-дизайн</option><option>Полиграфия</option></select></label><label>Количество<input id="estimate-quantity" type="number" min="1" max="1000" value="5" required></label><label class="check"><input id="estimate-urgent" type="checkbox"> Срочный заказ (+25%)</label><button class="primary" type="submit">Рассчитать →</button></form><div id="estimate-result" class="result">Укажите параметры заказа и нажмите «Рассчитать».</div></section>
+<p id="message" role="status" aria-live="polite"></p>
+</main></div>
+<dialog id="project-dialog"><form id="project-form" class="project-form"><div class="modal-top"><h3>Новый проект</h3><button type="button" id="close-dialog" class="cross" aria-label="Закрыть">×</button></div><label>Название проекта<input name="name" placeholder="Например, айдентика для кафе" maxlength="160" minlength="2" required></label><label>Клиент<input name="client" placeholder="Название бренда" maxlength="160" minlength="2" required></label><label>Категория<select name="category"><option>Брендинг</option><option>Соцсети</option><option>Веб-дизайн</option><option>Полиграфия</option></select></label><label>Дедлайн<input name="deadline" type="date"></label><button class="primary" type="submit">Создать проект</button></form></dialog>
+</body></html>
